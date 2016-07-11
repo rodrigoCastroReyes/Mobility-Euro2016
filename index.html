@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Heatmaps</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script type="text/javascript" src="lib/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="index.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        padding: 5px;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+
+      #floating-panel {
+        left: 25%;
+        padding: 5px;
+        position: absolute;
+        top: 10px;
+        z-index: 5;
+      }
+
+      .floating-legend{
+        display: flex;
+        justify-content:center;
+        width: 100%;
+        padding: 5px;
+        position: absolute;
+        bottom: 0px;
+        z-index: 5;
+        color: black;
+        font-size: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3GG1bWOb8u2eCEteiCY1yGnaKrqgW6R4&signed_in=true&libraries=visualization&callback=initMap">
+    </script>
+    <div id="floating-panel">
+      <input type="button" class="btn btn-success" value="Before" onclick="viewAfter()">
+      <input type="button" class="btn btn-success" value="Opening 10 June" onclick="viewOpenning()">
+      <input type="button" class="btn btn-success" value="Week: 11 June to 18 June" onclick="view1stWeek()">
+      <input type="button" class="btn btn-success" value="Week: 18 June to 25 June" onclick="view2ndWeek()">
+      <input type="button" class="btn btn-success" value="Week: 25 June to 01 July" onclick="view3rdWeek()">
+    </div>
+    <div>
+      <span id="legend" class="floating-legend label-success">Locations after of Euro2016</span>
+    </div>
+  </body>
+</html>
